@@ -15,7 +15,6 @@ public class Phone {
 	}
 	
 	// step3: methods:
-	
 	public void charge(int time){
 		if(_power + time > 100){
 			_power = 100;
@@ -48,6 +47,14 @@ public class Phone {
 	public void resetPassword(int password){
 		this.decreasePower(2);
 		_password = password;
+	}
+	
+	public void sendMessage(int number, String message) {
+		if (number > 1000000000 && number >= 100000000){
+			System.out.println("You have sent " + message + " to " + number );
+		} else  {
+			System.out.println("Message failed to send.");
+		}
 	}
 	// charge(time); TODO: upper -- if-else
 	// decreasePower(percentage); TODO: check lower bounds -- if-else 
