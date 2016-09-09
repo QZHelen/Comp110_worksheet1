@@ -10,8 +10,8 @@ public class Phone {
 	// step2: constructor
 
 	// step3: methods:
-	// charge(time); TODO: upper -- ifelse
-	// decreasePower(percentage); TODO: check lower bounds -- ifelse 
+	// charge(time); TODO: upper -- if-else
+	// decreasePower(percentage); TODO: check lower bounds -- if-else 
 	// isUnlockSuccessful(password); TODO: 1. check have power and password correct; 2. decrease power  
 	// resetPassword(password); TODO: decrease power
 	// 
