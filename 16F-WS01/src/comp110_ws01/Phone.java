@@ -8,8 +8,47 @@ public class Phone {
 	private int _password;
 
 	// step2: constructor
-
+	public Phone(String brand, int power, int password){
+		_brand = brand;
+		_power = power;
+		_password = password;
+	}
+	
 	// step3: methods:
+	
+	public void charge(int time){
+		if(_power + time > 100){
+			_power = 100;
+		} 
+		else {
+			_power = time * 1 + _power;
+		}
+		
+	}
+	
+	public void decreasePower(int percent){
+		if(_power - percent < 0){
+			_power = 0;
+		} else{
+			_power = _power - percent;
+		}
+		
+	}
+	
+	public boolean unlockPhone(int password){
+		if(_password == password && _power > 0){
+			this.decreasePower(1);
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	
+	public void resetPassword(int password){
+		this.decreasePower(2);
+		_password = password;
+	}
 	// charge(time); TODO: upper -- if-else
 	// decreasePower(percentage); TODO: check lower bounds -- if-else 
 	// isUnlockSuccessful(password); TODO: 1. check have power and password correct; 2. decrease power  
