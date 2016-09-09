@@ -62,6 +62,14 @@ public class Phone {
 	// resetPassword(password); TODO: decrease power
 	// 
 	
+	// getter methods
+	public int getPower(){
+		return _power;
+	}
+	
+	public int getPassword(){
+		return _password;
+	}
 	
 
 }
