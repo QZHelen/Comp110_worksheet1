@@ -9,6 +9,8 @@ import comp110_ws01.Phone;
 
 public class WS01_tester {
 
+//	TODO: test instance fields and test sendMessage method
+	
 	Phone p = new Phone("Samsung", 51, 111);
 			
 	@Test

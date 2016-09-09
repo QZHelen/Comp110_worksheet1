@@ -50,7 +50,7 @@ public class Phone {
 	}
 	
 	public void sendMessage(int number, String message) {
-		if (number > 1000000000 && number >= 100000000){
+		if (number < 1000000000 && number >= 100000000){
 			System.out.println("You have sent " + message + " to " + number );
 		} else  {
 			System.out.println("Message failed to send.");
@@ -69,6 +69,10 @@ public class Phone {
 	
 	public int getPassword(){
 		return _password;
+	}
+	
+	public String getBrand(){
+		return _brand;
 	}
 	
 
