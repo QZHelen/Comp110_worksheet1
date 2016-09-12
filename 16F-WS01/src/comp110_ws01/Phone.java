@@ -6,12 +6,14 @@ public class Phone {
 	private String _brand;
 	private int _power;
 	private int _password;
+	private boolean _locked;
 
 	// step2: constructor
 	public Phone(String brand, int power, int password){
 		_brand = brand;
 		_power = power;
 		_password = password;
+		_locked = true;
 	}
 	
 	// step3: methods:
@@ -37,6 +39,7 @@ public class Phone {
 	public boolean unlockPhone(int password){
 		if(_password == password && _power > 0){
 			this.decreasePower(1);
+			_locked = false;
 			return true;
 		}
 		else{
@@ -50,10 +53,12 @@ public class Phone {
 	}
 	
 	public void sendMessage(int number, String message) {
-		if (number < 1000000000 && number >= 100000000){
-			System.out.println("You have sent " + message + " to " + number );
-		} else  {
-			System.out.println("Message failed to send.");
+		if (_locked == false) {
+			if (number < 1000000000 && number >= 100000000){
+				System.out.println("You have sent " + message + " to " + number );
+			} else  {
+				System.out.println("Message failed to send.");
+			}
 		}
 	}
 	// charge(time); TODO: upper -- if-else
